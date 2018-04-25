@@ -1101,3 +1101,6 @@ D:\D盘\workspace\项目整理\进行中的项目\Source\PC程序\雷克萨斯\X
 D:\D盘\workspace\项目整理\进行中的项目\Source\PC程序\雷克萨斯\XHX\obj\Debug\Lexus.application
 D:\D盘\workspace\项目整理\进行中的项目\Source\PC程序\雷克萨斯\XHX\obj\Debug\Lexus.exe
 D:\D盘\workspace\项目整理\进行中的项目\Source\PC程序\雷克萨斯\XHX\obj\Debug\Lexus.pdb
+C:\Workspace\Mingjian_Lexus_Maxsight\XHX\bin\Debug\Lexus.exe.config
+C:\Workspace\Mingjian_Lexus_Maxsight\XHX\obj\Debug\Lexus.exe
+C:\Workspace\Mingjian_Lexus_Maxsight\XHX\obj\Debug\Lexus.pdb
