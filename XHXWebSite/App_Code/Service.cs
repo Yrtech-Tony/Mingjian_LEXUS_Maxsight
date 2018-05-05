@@ -4164,7 +4164,7 @@ public class Service : System.Web.Services.WebService
         }
         else
         {
-            string sql = string.Format(@"EXEC [up_DSearchAnswerDtl2PicSAT_ExecuteTeamAlterSave_CU]
+            string sql = string.Format(@"EXEC [up_DSAT_ExecuteTeamAlterSave_CU]
                                      @ProjectCode = '{0}'
                                     ,@ShopCode = '{1}'
                                     ,@SubjectCode= '{2}'
