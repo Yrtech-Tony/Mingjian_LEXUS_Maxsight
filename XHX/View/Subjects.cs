@@ -859,8 +859,10 @@ namespace XHX.View
         private void btnExcel_Click(object sender, EventArgs e)
         {
             if (grcSubject.DataSource != null)
-                //CommonHandler.ExcelExport(grvShopScore);
-                CommonHandler.ExcelExportByExporter(grvSubject);
+            { CommonHandler.ExcelExportByExporter(grvSubject);}
+
+
+
         }
 
     }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSubjectCode = new System.Windows.Forms.TextBox();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddRow = new DevExpress.XtraEditors.SimpleButton();
@@ -49,6 +53,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton3);
+            this.panelControl1.Controls.Add(this.txtSubjectCode);
+            this.panelControl1.Controls.Add(this.simpleButton2);
+            this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.btnDel);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.btnAddRow);
@@ -57,15 +65,51 @@
             this.panelControl1.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelControl1.Size = new System.Drawing.Size(592, 45);
+            this.panelControl1.Size = new System.Drawing.Size(592, 42);
             this.panelControl1.TabIndex = 9;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.simpleButton3.Location = new System.Drawing.Point(509, 12);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(78, 27);
+            this.simpleButton3.TabIndex = 12;
+            this.simpleButton3.Text = "Excel下载";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // txtSubjectCode
+            // 
+            this.txtSubjectCode.Location = new System.Drawing.Point(11, 14);
+            this.txtSubjectCode.Name = "txtSubjectCode";
+            this.txtSubjectCode.Size = new System.Drawing.Size(100, 21);
+            this.txtSubjectCode.TabIndex = 11;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.simpleButton2.Location = new System.Drawing.Point(117, 12);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(61, 23);
+            this.simpleButton2.TabIndex = 10;
+            this.simpleButton2.Text = "查询";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.simpleButton1.Location = new System.Drawing.Point(179, 12);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(103, 23);
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "生成失分说明";
             // 
             // btnDel
             // 
             this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDel.Location = new System.Drawing.Point(431, 15);
+            this.btnDel.Location = new System.Drawing.Point(355, 14);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 25);
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "删除行";
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -73,9 +117,9 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Location = new System.Drawing.Point(512, 15);
+            this.btnSave.Location = new System.Drawing.Point(431, 14);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 25);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -83,9 +127,9 @@
             // btnAddRow
             // 
             this.btnAddRow.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddRow.Location = new System.Drawing.Point(350, 15);
+            this.btnAddRow.Location = new System.Drawing.Point(280, 14);
             this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(75, 25);
+            this.btnAddRow.Size = new System.Drawing.Size(75, 23);
             this.btnAddRow.TabIndex = 0;
             this.btnAddRow.Text = "添加行";
             this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
@@ -94,11 +138,11 @@
             // 
             this.panelControl2.Controls.Add(this.grcInspectionStandard);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 45);
+            this.panelControl2.Location = new System.Drawing.Point(0, 42);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelControl2.Size = new System.Drawing.Size(592, 521);
+            this.panelControl2.Size = new System.Drawing.Size(592, 480);
             this.panelControl2.TabIndex = 10;
             // 
             // grcInspectionStandard
@@ -107,7 +151,7 @@
             this.grcInspectionStandard.Location = new System.Drawing.Point(2, 2);
             this.grcInspectionStandard.MainView = this.grvInpectionStandard;
             this.grcInspectionStandard.Name = "grcInspectionStandard";
-            this.grcInspectionStandard.Size = new System.Drawing.Size(588, 517);
+            this.grcInspectionStandard.Size = new System.Drawing.Size(588, 476);
             this.grcInspectionStandard.TabIndex = 0;
             this.grcInspectionStandard.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvInpectionStandard});
@@ -132,9 +176,11 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "gridColumn2";
+            this.gridColumn2.Caption = "体系代码";
             this.gridColumn2.FieldName = "SubjectCode";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // gcCode
             // 
@@ -147,7 +193,7 @@
             this.gcCode.Name = "gcCode";
             this.gcCode.OptionsColumn.AllowEdit = false;
             this.gcCode.Visible = true;
-            this.gcCode.VisibleIndex = 0;
+            this.gcCode.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
@@ -157,13 +203,13 @@
             this.gridColumn4.FieldName = "InspectionStandardName";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.VisibleIndex = 2;
             // 
             // InspectionStandard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 566);
+            this.ClientSize = new System.Drawing.Size(592, 522);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "InspectionStandard";
@@ -171,6 +217,7 @@
             this.Text = "InspectionStandard";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcInspectionStandard)).EndInit();
@@ -192,5 +239,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gcCode;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private System.Windows.Forms.TextBox txtSubjectCode;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

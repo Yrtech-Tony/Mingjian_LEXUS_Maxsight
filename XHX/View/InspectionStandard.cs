@@ -184,5 +184,17 @@ namespace XHX.View
                 e.Appearance.BackColor = Color.Gray;
             }
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            SearchProject(ProjectCode, txtSubjectCode.Text.Trim());
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (grcInspectionStandard.DataSource != null)
+                //CommonHandler.ExcelExport(grvShopScore);
+                CommonHandler.ExcelExportByExporter(grvInpectionStandard);
+        }
     }
 }
