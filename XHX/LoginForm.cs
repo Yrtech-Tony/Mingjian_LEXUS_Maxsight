@@ -60,17 +60,17 @@ namespace XHX
             {
                 //localhost.Service webService = new localhost.Service();
                 // webService.Url = "http://60.247.70.133/DSAT_Pad/service.asmx";
-                DateTime now = webService.ReturnDateTimeNow();
+               // DateTime now = webService.ReturnDateTimeNow();
 
                 //if (now.Date > new DateTime(2015, 11, 1) && now.Date < new DateTime(2015, 12, 1))
                 //{
                 //    CommonHandler.ShowMessage(MessageType.Information, "系统还有" + (30 - now.Day).ToString() + "天使用期限，请尽快续费");
                 //}
-                if (now.Date == new DateTime(2015, 12, 1))
-                {
-                    //CommonHandler.ShowMessage(MessageType.Information, "已经过期，如需继续使用请续费");
-                    //return;
-                }
+                //if (now.Date == new DateTime(2015, 12, 1))
+                //{
+                //    //CommonHandler.ShowMessage(MessageType.Information, "已经过期，如需继续使用请续费");
+                //    //return;
+                //}
                 DataSet ds = webService.getCurrentVersion();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
