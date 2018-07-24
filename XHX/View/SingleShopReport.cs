@@ -779,6 +779,123 @@ namespace XHX.View
             }
         }
 
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            if (tbnFilePath.Text == "")
+            {
+                CommonHandler.ShowMessage(MessageType.Information, "请选择\"数据路径\"");
+                tbnFilePath.Focus();
+                return;
+            }
+            _shopDtoList = new List<ShopDto>();
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if (gridView1.GetRowCellValue(i, "CheckMarkSelection") != null && gridView1.GetRowCellValue(i, "CheckMarkSelection").ToString() == "True")
+                {
+                    _shopDtoList.Add(gridView1.GetRow(i) as ShopDto);
+                }
+            }
+
+            foreach (ShopDto shop in _shopDtoList)
+            {
+                if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName))
+                {
+                    Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName);
+                }
+                DataSet ds = service.SearchSubjectFile(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString(), txtSubjectCode.Text);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString()))
+                        {
+                            Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString());
+                        }
+                        string fileName = ds.Tables[0].Rows[i]["FileName"].ToString();
+                        byte[] image = service.SearchPicStream(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName, ds.Tables[0].Rows[i]["SubjectCode"].ToString(), fileName.Replace(".jpg", ""));
+                        if (image != null)
+                        {
+
+                            MemoryStream buf = new MemoryStream(image);
+                            Image picimage = Image.FromStream(buf, true);
+                            picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + fileName.Replace(".jpg", "") + ".jpg");
+                        }
+
+                    }
+                }
+
+            }
+            CommonHandler.ShowMessage(MessageType.Information, "生成完毕");
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (tbnFilePath.Text == "")
+            {
+                CommonHandler.ShowMessage(MessageType.Information, "请选择\"数据路径\"");
+                tbnFilePath.Focus();
+                return;
+            }
+            _shopDtoList = new List<ShopDto>();
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if (gridView1.GetRowCellValue(i, "CheckMarkSelection") != null && gridView1.GetRowCellValue(i, "CheckMarkSelection").ToString() == "True")
+                {
+                    _shopDtoList.Add(gridView1.GetRow(i) as ShopDto);
+                }
+            }
+
+
+            foreach (ShopDto shop in _shopDtoList)
+            {
+                if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName))
+                {
+                    Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName);
+                }
+                DataSet ds = service.SearchLossPicByShopCode(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString(), shop.ShopCode);
+                //DataSet ds1 =service.SearchAnswerDtl2(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString(),
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString()))
+                        {
+                            Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString());
+                        }
+                        string[] picName = ds.Tables[0].Rows[i]["PicName"].ToString().Split(';');
+                        //string lossDesc = ds.Tables[0].Rows[i]["LossDesc"].ToString();
+                        if (picName.Length == 1)
+                        {
+                            byte[] image = service.SearchPicStream(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName, ds.Tables[0].Rows[i]["SubjectCode"].ToString(), picName[0].Replace(".jpg", ""));
+                            if (image != null)
+                            {
+
+                                MemoryStream buf = new MemoryStream(image);
+                                Image picimage = Image.FromStream(buf, true);
+                                picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + picName[0].Replace(".jpg", "") + ".jpg");
+                            }
+                        }
+                        else
+                        {
+                            for (int j = 0; j < picName.Length; j++)
+                            {
+                                byte[] image = service.SearchPicStream(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName, ds.Tables[0].Rows[i]["SubjectCode"].ToString(), picName[j].Replace(".jpg", ""));
+                                if (image != null)
+                                {
+                                    MemoryStream buf = new MemoryStream(image);
+                                    Image picimage = Image.FromStream(buf, true);
+                                    picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + picName[j].Replace(".jpg", "") + ".jpg");
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+            CommonHandler.ShowMessage(MessageType.Information, "生成完毕");
+        }
+
  
     }
 }

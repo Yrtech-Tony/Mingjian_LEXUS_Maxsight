@@ -1873,6 +1873,60 @@ public class Service : System.Web.Services.WebService
         return ds;
     }
     #endregion
+    [WebMethod]
+    public byte[] SearchPicStream(string shopName, string subjectCode, string picName)
+    {
+
+        string appDomainPath = AppDomain.CurrentDomain.BaseDirectory;
+        string filePath = "";
+        if (File.Exists(appDomainPath + @"UploadImage\" + shopName + @"\" + subjectCode + @"\" + picName + ".jpg"))
+        {
+            filePath = appDomainPath + @"UploadImage\" + shopName + @"\" + subjectCode + @"\" + picName + ".jpg";
+        }
+        //if (!File.Exists(filePath))
+        //{
+        if (!Directory.Exists(appDomainPath + @"UploadImage\"))
+        {
+            Directory.CreateDirectory(appDomainPath + @"UploadImage\");
+        }
+        if (!Directory.Exists(appDomainPath + @"UploadImage\" + @"\" + shopName))
+        {
+            Directory.CreateDirectory(appDomainPath + @"UploadImage\" + @"\" + shopName);
+        }
+        if (!Directory.Exists(appDomainPath + @"UploadImage\" + @"\" + shopName + @"\" + subjectCode))
+        {
+            Directory.CreateDirectory(appDomainPath + @"UploadImage\" + @"\" + shopName + @"\" + subjectCode);
+        }
+
+        try
+        {
+            UploadFileToAliyun aliyun = new UploadFileToAliyun();
+            aliyun.GetObject("yrtech", "LEXUS" + @"/" + shopName + @"/" + subjectCode + @"/" + picName.Replace(".jpg", "") + ".jpg",
+                           appDomainPath + @"UploadImage\" + shopName + @"\" + subjectCode + @"\" + picName.Replace(".jpg", "") + ".jpg");
+            filePath = appDomainPath + @"UploadImage\" + shopName + @"\" + subjectCode + @"\" + picName.Replace(".jpg", "") + ".jpg";
+        }
+        catch (Aliyun.OpenServices.OpenStorageService.OssException ex)
+        {
+
+        }
+
+        //}
+        if (File.Exists(filePath))
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
+            {
+                byte[] b = new byte[fs.Length];
+                fs.Read(b, 0, b.Length);
+                fs.Close();
+                return b;
+            }
+        }
+        else
+        {
+            return null;
+        }
+
+    }
     #region SalesConsultant
     /// <summary>
     /// 
@@ -3419,6 +3473,13 @@ public class Service : System.Web.Services.WebService
         CommonHandler.UnZip(uploadZipFileName, uploadImgPath, "");
 
         File.Delete(uploadZipFileName);
+    }
+    [WebMethod]
+    public DataSet SearchLossPicByShopCode(string projectCode, string shopCode)
+    {
+        string sql = string.Format("EXEC up_Picture_SearchLossInfo_R'{0}','{1}'", projectCode, shopCode);
+        DataSet ds = CommonHandler.query(sql);
+        return ds;
     }
     /// <summary>
     /// 

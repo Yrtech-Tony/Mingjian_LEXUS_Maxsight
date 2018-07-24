@@ -3,6 +3,27 @@
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SearchRateAllByProjectCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRateAllByProjectCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRateAllByProjectCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SearchRateAllByArea">
         <s:complexType>
           <s:sequence>
@@ -900,6 +921,28 @@
       </s:element>
       <s:element name="UploadImgZipFileResponse">
         <s:complexType />
+      </s:element>
+      <s:element name="SearchLossPicByShopCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLossPicByShopCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchLossPicByShopCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="UploadImgZipFile1">
         <s:complexType>
@@ -3318,6 +3361,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SearchPicStream">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shopName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPicStreamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchPicStreamResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SearchSalesConsultant">
         <s:complexType>
           <s:sequence>
@@ -4119,27 +4178,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SearchRateAllByProjectCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchRateAllByProjectCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchRateAllByProjectCodeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="char">
@@ -4147,6 +4185,12 @@
       </s:simpleType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SearchRateAllByProjectCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCode" />
+  </wsdl:message>
+  <wsdl:message name="SearchRateAllByProjectCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCodeResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchRateAllByAreaSoapIn">
     <wsdl:part name="parameters" element="tns:SearchRateAllByArea" />
   </wsdl:message>
@@ -4446,6 +4490,12 @@
   </wsdl:message>
   <wsdl:message name="UploadImgZipFileSoapOut">
     <wsdl:part name="parameters" element="tns:UploadImgZipFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchLossPicByShopCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchLossPicByShopCode" />
+  </wsdl:message>
+  <wsdl:message name="SearchLossPicByShopCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchLossPicByShopCodeResponse" />
   </wsdl:message>
   <wsdl:message name="UploadImgZipFile1SoapIn">
     <wsdl:part name="parameters" element="tns:UploadImgZipFile1" />
@@ -5233,6 +5283,12 @@
   <wsdl:message name="getCurrentVersionSoapOut">
     <wsdl:part name="parameters" element="tns:getCurrentVersionResponse" />
   </wsdl:message>
+  <wsdl:message name="SearchPicStreamSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchPicStream" />
+  </wsdl:message>
+  <wsdl:message name="SearchPicStreamSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchPicStreamResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchSalesConsultantSoapIn">
     <wsdl:part name="parameters" element="tns:SearchSalesConsultant" />
   </wsdl:message>
@@ -5485,13 +5541,11 @@
   <wsdl:message name="GetAllProjectSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllProjectResponse" />
   </wsdl:message>
-  <wsdl:message name="SearchRateAllByProjectCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCode" />
-  </wsdl:message>
-  <wsdl:message name="SearchRateAllByProjectCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCodeResponse" />
-  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <wsdl:input message="tns:SearchRateAllByProjectCodeSoapIn" />
+      <wsdl:output message="tns:SearchRateAllByProjectCodeSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <wsdl:input message="tns:SearchRateAllByAreaSoapIn" />
       <wsdl:output message="tns:SearchRateAllByAreaSoapOut" />
@@ -5691,6 +5745,10 @@
     <wsdl:operation name="UploadImgZipFile">
       <wsdl:input message="tns:UploadImgZipFileSoapIn" />
       <wsdl:output message="tns:UploadImgZipFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLossPicByShopCode">
+      <wsdl:input message="tns:SearchLossPicByShopCodeSoapIn" />
+      <wsdl:output message="tns:SearchLossPicByShopCodeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UploadImgZipFile1">
       <wsdl:input message="tns:UploadImgZipFile1SoapIn" />
@@ -6216,6 +6274,10 @@
       <wsdl:input message="tns:getCurrentVersionSoapIn" />
       <wsdl:output message="tns:getCurrentVersionSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SearchPicStream">
+      <wsdl:input message="tns:SearchPicStreamSoapIn" />
+      <wsdl:output message="tns:SearchPicStreamSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SearchSalesConsultant">
       <wsdl:input message="tns:SearchSalesConsultantSoapIn" />
       <wsdl:output message="tns:SearchSalesConsultantSoapOut" />
@@ -6384,13 +6446,18 @@
       <wsdl:input message="tns:GetAllProjectSoapIn" />
       <wsdl:output message="tns:GetAllProjectSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <wsdl:input message="tns:SearchRateAllByProjectCodeSoapIn" />
-      <wsdl:output message="tns:SearchRateAllByProjectCodeSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <soap:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <soap:operation soapAction="http://tempuri.org/SearchRateAllByArea" style="document" />
       <wsdl:input>
@@ -6834,6 +6901,15 @@
     </wsdl:operation>
     <wsdl:operation name="UploadImgZipFile">
       <soap:operation soapAction="http://tempuri.org/UploadImgZipFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLossPicByShopCode">
+      <soap:operation soapAction="http://tempuri.org/SearchLossPicByShopCode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8020,6 +8096,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SearchPicStream">
+      <soap:operation soapAction="http://tempuri.org/SearchPicStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchSalesConsultant">
       <soap:operation soapAction="http://tempuri.org/SearchSalesConsultant" style="document" />
       <wsdl:input>
@@ -8398,18 +8483,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <soap:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <soap12:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <soap12:operation soapAction="http://tempuri.org/SearchRateAllByArea" style="document" />
       <wsdl:input>
@@ -8853,6 +8938,15 @@
     </wsdl:operation>
     <wsdl:operation name="UploadImgZipFile">
       <soap12:operation soapAction="http://tempuri.org/UploadImgZipFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLossPicByShopCode">
+      <soap12:operation soapAction="http://tempuri.org/SearchLossPicByShopCode" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -10039,6 +10133,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SearchPicStream">
+      <soap12:operation soapAction="http://tempuri.org/SearchPicStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchSalesConsultant">
       <soap12:operation soapAction="http://tempuri.org/SearchSalesConsultant" style="document" />
       <wsdl:input>
@@ -10410,15 +10513,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllProject">
       <soap12:operation soapAction="http://tempuri.org/GetAllProject" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <soap12:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

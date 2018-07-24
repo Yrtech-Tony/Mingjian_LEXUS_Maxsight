@@ -29,13 +29,9 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cboProjects = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btnMBReport = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMB = new DevExpress.XtraEditors.ButtonEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnMBH = new DevExpress.XtraEditors.ButtonEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSubjectCode = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tbnFilePath = new DevExpress.XtraEditors.ButtonEdit();
@@ -48,13 +44,13 @@
             this.gcShopName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboAreaCode = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.chkUseChk = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdShop)).BeginInit();
             this.grdShop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboProjects.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMBH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubjectCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbnFilePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcShop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -94,13 +90,10 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.checkBox1);
-            this.groupControl2.Controls.Add(this.btnMBReport);
-            this.groupControl2.Controls.Add(this.btnMB);
-            this.groupControl2.Controls.Add(this.labelControl3);
-            this.groupControl2.Controls.Add(this.btnMBH);
-            this.groupControl2.Controls.Add(this.labelControl2);
+            this.groupControl2.Controls.Add(this.simpleButton3);
+            this.groupControl2.Controls.Add(this.txtSubjectCode);
             this.groupControl2.Controls.Add(this.simpleButton2);
+            this.groupControl2.Controls.Add(this.checkBox1);
             this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.tbnFilePath);
@@ -113,6 +106,22 @@
             this.groupControl2.Size = new System.Drawing.Size(982, 98);
             this.groupControl2.TabIndex = 92;
             // 
+            // txtSubjectCode
+            // 
+            this.txtSubjectCode.Location = new System.Drawing.Point(834, 56);
+            this.txtSubjectCode.Name = "txtSubjectCode";
+            this.txtSubjectCode.Size = new System.Drawing.Size(121, 21);
+            this.txtSubjectCode.TabIndex = 101;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(696, 48);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(115, 45);
+            this.simpleButton2.TabIndex = 99;
+            this.simpleButton2.Text = "下载标准照片";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -122,73 +131,11 @@
             this.checkBox1.TabIndex = 98;
             this.checkBox1.Text = "奔驰模板";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // btnMBReport
-            // 
-            this.btnMBReport.Location = new System.Drawing.Point(783, 47);
-            this.btnMBReport.Name = "btnMBReport";
-            this.btnMBReport.Size = new System.Drawing.Size(115, 45);
-            this.btnMBReport.TabIndex = 97;
-            this.btnMBReport.Text = "生成奔驰报告";
-            this.btnMBReport.Visible = false;
-            // 
-            // btnMB
-            // 
-            this.btnMB.EditValue = "";
-            this.btnMB.Location = new System.Drawing.Point(729, 24);
-            this.btnMB.Name = "btnMB";
-            this.btnMB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnMB.Size = new System.Drawing.Size(170, 21);
-            this.btnMB.TabIndex = 96;
-            this.btnMB.Visible = false;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.Location = new System.Drawing.Point(383, 27);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(84, 14);
-            this.labelControl3.TabIndex = 95;
-            this.labelControl3.Text = "迈巴赫模板路径";
-            this.labelControl3.Visible = false;
-            // 
-            // btnMBH
-            // 
-            this.btnMBH.EditValue = "";
-            this.btnMBH.Location = new System.Drawing.Point(473, 24);
-            this.btnMBH.Name = "btnMBH";
-            this.btnMBH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnMBH.Size = new System.Drawing.Size(148, 21);
-            this.btnMBH.TabIndex = 94;
-            this.btnMBH.Visible = false;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.Location = new System.Drawing.Point(651, 27);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(72, 14);
-            this.labelControl2.TabIndex = 93;
-            this.labelControl2.Text = "奔驰模板路径";
-            this.labelControl2.Visible = false;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(648, 49);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(129, 44);
-            this.simpleButton2.TabIndex = 91;
-            this.simpleButton2.Text = "不计分经销商设置";
-            this.simpleButton2.Visible = false;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.checkBox1.Visible = false;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(582, 49);
+            this.simpleButton1.Location = new System.Drawing.Point(523, 48);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(60, 44);
             this.simpleButton1.TabIndex = 90;
@@ -222,6 +169,7 @@
             this.pbrProgress.Name = "pbrProgress";
             this.pbrProgress.Size = new System.Drawing.Size(391, 23);
             this.pbrProgress.TabIndex = 89;
+            this.pbrProgress.Visible = false;
             // 
             // labelControl5
             // 
@@ -232,14 +180,16 @@
             this.labelControl5.Size = new System.Drawing.Size(48, 14);
             this.labelControl5.TabIndex = 4;
             this.labelControl5.Text = "生成进度";
+            this.labelControl5.Visible = false;
             // 
             // btnGenerate
             // 
             this.btnGenerate.Location = new System.Drawing.Point(461, 48);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(115, 45);
+            this.btnGenerate.Size = new System.Drawing.Size(65, 45);
             this.btnGenerate.TabIndex = 88;
             this.btnGenerate.Text = "生成报告";
+            this.btnGenerate.Visible = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // grcShop
@@ -305,6 +255,15 @@
             this.chkUseChk.AutoHeight = false;
             this.chkUseChk.Name = "chkUseChk";
             // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(589, 48);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(101, 45);
+            this.simpleButton3.TabIndex = 102;
+            this.simpleButton3.Text = "下载失分照片";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
             // SingleShopReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -322,8 +281,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMBH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubjectCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbnFilePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -351,12 +309,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gcShopName;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit chkUseChk;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboAreaCode;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnMBReport;
-        private DevExpress.XtraEditors.ButtonEdit btnMB;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.ButtonEdit btnMBH;
         private System.Windows.Forms.CheckBox checkBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit txtSubjectCode;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
