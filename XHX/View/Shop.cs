@@ -362,9 +362,10 @@ namespace XHX.View
         {
             Workbook workbook = msExcelUtil.OpenExcelByMSExcel(btnModule.Text);
             Worksheet worksheet_FengMian = workbook.Worksheets["AreaShop"] as Worksheet;
-            for (int i = 2; i < 500; i++)
+            for (int i = 2; i < 5000; i++)
             {
                 string shopCode = msExcelUtil.GetCellValue(worksheet_FengMian, "A", i);
+                if (string.IsNullOrEmpty(shopCode)) break;
                 if (!string.IsNullOrEmpty(shopCode))
                 {
 
