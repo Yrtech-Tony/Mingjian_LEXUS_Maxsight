@@ -318,18 +318,19 @@ namespace XHX.View
         {
             Workbook workbook = msExcelUtil.OpenExcelByMSExcel(btnModule.Text);
             Worksheet worksheet_FengMian = workbook.Worksheets["Shop"] as Worksheet;
-            for (int i = 2; i < 500; i++)
+            for (int i = 2; i < 5000; i++)
             {
                 string shopCode = msExcelUtil.GetCellValue(worksheet_FengMian, "A", i);
+                if (string.IsNullOrEmpty(shopCode)) break;
                 if (!string.IsNullOrEmpty(shopCode))
                 {
                     string shopName = msExcelUtil.GetCellValue(worksheet_FengMian, "B", i);
-                    string areaCode = msExcelUtil.GetCellValue(worksheet_FengMian, "E", i);
-                    string province = msExcelUtil.GetCellValue(worksheet_FengMian, "F", i);
-                    string city = msExcelUtil.GetCellValue(worksheet_FengMian, "G", i);
-                    string group = msExcelUtil.GetCellValue(worksheet_FengMian, "H", i);
-                    string salesOrAftersales = msExcelUtil.GetCellValue(worksheet_FengMian, "I", i);
-                    string carType = msExcelUtil.GetCellValue(worksheet_FengMian, "J", i);
+                    string areaCode = msExcelUtil.GetCellValue(worksheet_FengMian, "C", i);
+                    string province = msExcelUtil.GetCellValue(worksheet_FengMian, "D", i);
+                    string city = msExcelUtil.GetCellValue(worksheet_FengMian, "E", i);
+                    string group = msExcelUtil.GetCellValue(worksheet_FengMian, "F", i);
+                    string salesOrAftersales = "";//msExcelUtil.GetCellValue(worksheet_FengMian, "I", i);
+                    string carType = "";// msExcelUtil.GetCellValue(worksheet_FengMian, "J", i);
                     try
                     {
                         webService.SaveShop(areaCode, "", shopCode, shopName, true, this.UserInfoDto.UserID, province, city, salesOrAftersales, group, carType);
