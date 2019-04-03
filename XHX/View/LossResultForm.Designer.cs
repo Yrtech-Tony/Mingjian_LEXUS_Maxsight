@@ -87,7 +87,7 @@
             this.grcLossResult1.Location = new System.Drawing.Point(3, 3);
             this.grcLossResult1.MainView = this.grvLossResult1;
             this.grcLossResult1.Name = "grcLossResult1";
-            this.grcLossResult1.Size = new System.Drawing.Size(574, 444);
+            this.grcLossResult1.Size = new System.Drawing.Size(712, 479);
             this.grcLossResult1.TabIndex = 0;
             this.grcLossResult1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvLossResult1});
@@ -144,7 +144,7 @@
             this.panelControl2.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelControl2.Size = new System.Drawing.Size(592, 480);
+            this.panelControl2.Size = new System.Drawing.Size(730, 515);
             this.panelControl2.TabIndex = 12;
             // 
             // tabControl
@@ -156,7 +156,7 @@
             this.tabControl.Location = new System.Drawing.Point(2, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(588, 476);
+            this.tabControl.Size = new System.Drawing.Size(726, 511);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -165,7 +165,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(580, 450);
+            this.tabPage1.Size = new System.Drawing.Size(718, 485);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "失分说明1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(580, 450);
+            this.tabPage2.Size = new System.Drawing.Size(718, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "失分说明2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             this.grcLossResult2.Location = new System.Drawing.Point(3, 3);
             this.grcLossResult2.MainView = this.grvLossResult2;
             this.grcLossResult2.Name = "grcLossResult2";
-            this.grcLossResult2.Size = new System.Drawing.Size(574, 444);
+            this.grcLossResult2.Size = new System.Drawing.Size(712, 479);
             this.grcLossResult2.TabIndex = 1;
             this.grcLossResult2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvLossResult2});
@@ -247,7 +247,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(580, 450);
+            this.tabPage3.Size = new System.Drawing.Size(718, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "失分说明3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -258,7 +258,7 @@
             this.grcLossResult3.Location = new System.Drawing.Point(3, 3);
             this.grcLossResult3.MainView = this.grvLossResult3;
             this.grcLossResult3.Name = "grcLossResult3";
-            this.grcLossResult3.Size = new System.Drawing.Size(574, 444);
+            this.grcLossResult3.Size = new System.Drawing.Size(712, 479);
             this.grcLossResult3.TabIndex = 2;
             this.grcLossResult3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvLossResult3});
@@ -315,7 +315,7 @@
             // btnDel
             // 
             this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDel.Location = new System.Drawing.Point(431, 14);
+            this.btnDel.Location = new System.Drawing.Point(569, 14);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 3;
@@ -335,13 +335,13 @@
             this.panelControl1.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelControl1.Size = new System.Drawing.Size(592, 42);
+            this.panelControl1.Size = new System.Drawing.Size(730, 42);
             this.panelControl1.TabIndex = 11;
             // 
             // simpleButton3
             // 
             this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.simpleButton3.Location = new System.Drawing.Point(257, 10);
+            this.simpleButton3.Location = new System.Drawing.Point(312, 10);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(87, 27);
             this.simpleButton3.TabIndex = 12;
@@ -350,7 +350,7 @@
             // 
             // txtSubjectCode
             // 
-            this.txtSubjectCode.Location = new System.Drawing.Point(71, 12);
+            this.txtSubjectCode.Location = new System.Drawing.Point(139, 12);
             this.txtSubjectCode.Name = "txtSubjectCode";
             this.txtSubjectCode.Size = new System.Drawing.Size(100, 21);
             this.txtSubjectCode.TabIndex = 11;
@@ -358,7 +358,7 @@
             // simpleButton2
             // 
             this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.simpleButton2.Location = new System.Drawing.Point(177, 10);
+            this.simpleButton2.Location = new System.Drawing.Point(245, 10);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(61, 23);
             this.simpleButton2.TabIndex = 10;
@@ -368,7 +368,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSave.Location = new System.Drawing.Point(511, 14);
+            this.btnSave.Location = new System.Drawing.Point(649, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -378,7 +378,7 @@
             // btnAddRow
             // 
             this.btnAddRow.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddRow.Location = new System.Drawing.Point(350, 14);
+            this.btnAddRow.Location = new System.Drawing.Point(488, 14);
             this.btnAddRow.Name = "btnAddRow";
             this.btnAddRow.Size = new System.Drawing.Size(75, 23);
             this.btnAddRow.TabIndex = 0;
@@ -389,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 522);
+            this.ClientSize = new System.Drawing.Size(730, 557);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "LossResultForm";
