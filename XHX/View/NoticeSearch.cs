@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using XHX.Common;
 using XHX.DTO;
+using System.Management;
 
 namespace XHX.View
 {
@@ -95,10 +96,34 @@ namespace XHX.View
             {
                 if (item.StatusType == 'D')
                 {
-                    webService.DeleteNotice(item.NoticeID);
+                    webService.DeleteNotice(item.NoticeID, this.UserInfoDto.UserID, getMacAddr_Local());
                 }
             }
             this.SearchButtonClick();
+        }
+        public static string getMacAddr_Local()
+        {
+            string madAddr = null;
+            try
+            {
+                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+                ManagementObjectCollection moc2 = mc.GetInstances();
+                foreach (ManagementObject mo in moc2)
+                {
+                    if (Convert.ToBoolean(mo["IPEnabled"]) == true)
+                    {
+                        madAddr = mo["MacAddress"].ToString(); madAddr = madAddr.Replace(':', '-');
+                    } mo.Dispose();
+                }
+
+            }
+            catch
+            {
+
+
+            }
+            return madAddr;
+
         }
         public override List<ButtonType> CreateButton()
         {
