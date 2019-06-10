@@ -3934,12 +3934,13 @@ public class Service : System.Web.Services.WebService
 
     //保存公告并查询
     [WebMethod]
-    public DataSet SaveNoticeAndSearch(string noticeID, string noticeTitle, string noticeContent, string userID)
+    public DataSet SaveNoticeAndSearch(string noticeID, string noticeTitle, string noticeContent, string userID,string macId)
     {
         string sql = string.Format(@"EXEC [up_DSAT_Notice_S] @NoticeID = '{0}'
                                         ,@NoticeTitle = '{1}'
                                         ,@NoticeContent = '{2}'
-                                        ,@UserID = '{3}'", noticeID, noticeTitle, noticeContent, userID);
+                                        ,@UserID = '{3}'
+                                        ,@MacId = '{4}'", noticeID, noticeTitle, noticeContent, userID, macId);
         DataSet ds = CommonHandler.query(sql);
 
         return ds;
@@ -4043,7 +4044,7 @@ public class Service : System.Web.Services.WebService
         return ds;
     }
     [WebMethod]
-    public void DeleteNotice(string noticeID)
+    public void DeleteNotice(string noticeID,string userId,string macId)
     {
         string appDomainPath = AppDomain.CurrentDomain.BaseDirectory;
         string uploadImagePath = appDomainPath + @"UploadImage\NoticeAttachment\";
@@ -4059,7 +4060,7 @@ public class Service : System.Web.Services.WebService
         }
 
         string sql = string.Format(@"EXEC [up_DSAT_Notice_D]
-                                            @NoticeID = '{0}'", noticeID);
+                                            @NoticeID = '{0}',@UserId = '{1}',@MacId = '{2}'", noticeID,userId,macId);
         CommonHandler.query(sql);
 
     }

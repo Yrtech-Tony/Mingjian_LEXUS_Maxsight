@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using XHX.Common;
 using XHX.DTO;
 using System.IO;
+using System.Management;
 
 namespace XHX.ViewLocalService
 {
@@ -92,7 +93,30 @@ namespace XHX.ViewLocalService
             grcAttachment.DataSource = noticeAttachmentList;
 
         }
+        public static string getMacAddr_Local()
+        {
+            string madAddr = null;
+            try
+            {
+                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+                ManagementObjectCollection moc2 = mc.GetInstances();
+                foreach (ManagementObject mo in moc2)
+                {
+                    if (Convert.ToBoolean(mo["IPEnabled"]) == true)
+                    {
+                        madAddr = mo["MacAddress"].ToString(); madAddr = madAddr.Replace(':', '-');
+                    } mo.Dispose();
+                }
 
+            }
+            catch
+            {
+
+
+            }
+            return madAddr;
+
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTitle.Text))
@@ -108,7 +132,7 @@ namespace XHX.ViewLocalService
                 return;
             }
             //保存公告信息并查询
-            DataSet ds = webService.SaveNoticeAndSearch(NoticeID, txtTitle.Text, txtContent.Text, "SYSADMIN");
+            DataSet ds = webService.SaveNoticeAndSearch(NoticeID, txtTitle.Text, txtContent.Text, "SYSADMIN", getMacAddr_Local());
 
             if (ds.Tables[0].Rows.Count > 0)
             {
