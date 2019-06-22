@@ -70,8 +70,7 @@ namespace XHX.View
             selection3.CheckMarkColumn.VisibleIndex = 0;
             this.projectCode = projectCode;
             this.subjectCode = subjectCode;
-            txtSubjectCode.Text = subjectCode;
-            SearchLoss(projectCode, txtSubjectCode.Text);
+            SearchLoss(projectCode, subjectCode);
         }
 
         private void SearchLoss(string projectCode, string subjectCode)
@@ -285,7 +284,7 @@ namespace XHX.View
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            SearchLoss(ProjectCode, txtSubjectCode.Text);
+            SearchLoss(projectCode, txtSubjectCode.Text);
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)

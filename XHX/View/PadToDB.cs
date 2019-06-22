@@ -248,7 +248,7 @@ namespace XHX.View
                 return;
             }
 
-            string sqlConnString = GetSqlServerConnectionString("123.57.229.128", "Toyota", "sa", "mxT1@mfb");
+            string sqlConnString = GetSqlServerConnectionString("123.57.229.128", "LEXUS", "sa", "mxT1@mfb");
             string sqlitePath = Path.Combine(tbnSQLitePath.Text.Trim(), "readonly.db");
             this.Cursor = Cursors.WaitCursor;
             SqlConversionHandler handler = new SqlConversionHandler(delegate(bool done,
@@ -320,7 +320,7 @@ namespace XHX.View
                 return;
             }
 
-            string sqlConnString = GetSqlServerConnectionString("123.57.229.128", "Toyota", "sa", "mxT1@mfb");
+            string sqlConnString = GetSqlServerConnectionString("123.57.229.128", "LEXUS", "sa", "mxT1@mfb");
             string sqlitePath = Path.Combine(tbnSQLitePathForUpdate.Text.Trim(), "readonly.db");
             this.Cursor = Cursors.WaitCursor;
             SqlConversionHandler handler = new SqlConversionHandler(delegate(bool done,
